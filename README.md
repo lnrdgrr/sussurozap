@@ -9,6 +9,34 @@ da OpenAI (modelo rodando 100% na máquina, sem enviar áudio pra nuvem).
 - Instalador Windows standalone (não exige Python, ffmpeg nem Whisper
   pré-instalados na máquina de destino)
 
+## Dependências
+
+Para **rodar a partir do código-fonte** (não se aplica a quem só usa o
+`SussuroZap-Setup.exe` já gerado, que é standalone):
+
+| Dependência | Versão usada | Observação |
+|---|---|---|
+| [Python](https://www.python.org/downloads/) | 3.11.x | PyTorch/Whisper ainda não suportam Python 3.12+ na prática |
+| [ffmpeg](https://www.gyan.dev/ffmpeg/builds/) | 8.1 (full build) | Precisa estar no PATH do sistema em modo dev, ou vendorizado em `vendor/ffmpeg/` |
+| [openai-whisper](https://pypi.org/project/openai-whisper/) | 20250625 | Motor de transcrição (instalado via `requirements.txt`) |
+| [pywebview](https://pypi.org/project/pywebview/) | 6.2.1 | Janela desktop nativa (instalado via `requirements.txt`) |
+| torch | 2.13.0 | Dependência transitiva do whisper — pacote grande (~600MB), puxado automaticamente |
+| numpy | 2.4.6 | Dependência transitiva |
+| tiktoken | 0.13.0 | Dependência transitiva (tokenizer do whisper) |
+| numba | 0.66.0 | Dependência transitiva |
+
+As dependências Python inteiras estão em `requirements.txt` — `torch`,
+`numpy`, `tiktoken`, `numba` etc. são instaladas automaticamente como
+dependências do `openai-whisper`, não precisam ser listadas à parte no
+`pip install`.
+
+Para **gerar o instalador** (`.exe`), some a isso:
+
+| Ferramenta | Uso |
+|---|---|
+| [PyInstaller](https://pyinstaller.org) | Empacota o app + Python + dependências num bundle standalone |
+| [Inno Setup](https://jrsoftware.org/isinfo.php) 6.x | Compila o bundle num instalador `.exe` com atalhos e desinstalador |
+
 ## Estrutura
 
 ```
