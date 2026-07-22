@@ -9,6 +9,13 @@ da OpenAI (modelo rodando 100% na máquina, sem enviar áudio pra nuvem).
 - Instalador Windows standalone (não exige Python, ffmpeg nem Whisper
   pré-instalados na máquina de destino)
 
+## Download
+
+Não precisa instalar nada antes: baixe o instalador pronto na página de
+releases e rode.
+
+**[⬇ Baixar SussuroZap-Setup.exe (última versão)](https://github.com/lnrdgrr/sussurozap/releases/latest/download/SussuroZap-Setup.exe)**
+
 ## Dependências
 
 Para **rodar a partir do código-fonte** (não se aplica a quem só usa o
