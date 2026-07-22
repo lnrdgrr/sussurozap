@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<title>SussuroZap</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="layout">
+    <main class="main">
+      <h1>SussuroZap <span class="badge">Whisper local</span></h1>
+
+      <div id="dropzone" class="dropzone">
+        <div class="dropzone-icon">🎙️</div>
+        <p>Arraste um arquivo <strong>.ogg, .mp3 ou .aiff</strong> aqui</p>
+        <p class="muted">ou</p>
+        <button id="browseBtn">Selecionar arquivo</button>
+      </div>
+
+      <div id="status" class="status hidden"></div>
+
+      <div id="resultBox" class="result hidden">
+        <div class="result-header">
+          <span id="resultFilename"></span>
+          <button id="copyBtn" title="Copiar texto">Copiar</button>
+        </div>
+        <textarea id="resultText" readonly></textarea>
+      </div>
+    </main>
+
+    <aside class="sidebar">
+      <h2>Histórico</h2>
+      <div id="history" class="history"></div>
+    </aside>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

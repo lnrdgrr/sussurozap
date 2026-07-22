@@ -1,0 +1,13 @@
+venv/
+build/
+dist/
+installer_output/
+__pycache__/
+*.pyc
+*.spec
+data/
+
+vendor/ffmpeg/*
+!vendor/ffmpeg/README.md
+vendor/models/*
+!vendor/models/README.md
